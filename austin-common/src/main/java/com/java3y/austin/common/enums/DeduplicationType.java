@@ -4,9 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 去重类型枚举
  *
@@ -15,7 +12,7 @@ import java.util.List;
 @Getter
 @ToString
 @AllArgsConstructor
-public enum DeduplicationType {
+public enum DeduplicationType implements PowerfulEnum {
 
     /**
      * 相同内容去重
@@ -29,18 +26,4 @@ public enum DeduplicationType {
     ;
     private final Integer code;
     private final String description;
-
-
-    /**
-     * 获取去重渠道的列表
-     *
-     * @return
-     */
-    public static List<Integer> getDeduplicationList() {
-        ArrayList<Integer> result = new ArrayList<>();
-        for (DeduplicationType value : DeduplicationType.values()) {
-            result.add(value.getCode());
-        }
-        return result;
-    }
 }
